@@ -20,6 +20,10 @@ h3{
 	font-size: 12pt;
 	margin-bottom: 10px;
 }
+#waitingBox {
+	height: 40px;
+	padding-top: 10px;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

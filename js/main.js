@@ -9,6 +9,7 @@ var minBpm = 10;
 var maxBpm = 300;
 var maxSteps = 8;
 var images = new Array();
+var trackUrl;
 
 function preload() {
 	for (i = 0; i < preload.arguments.length; i++) {
@@ -52,13 +53,33 @@ function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    return results === null ? "" : decodeURIComponent(results[1]);
 }
 
 var sharedBeat = getParameterByName('beat');
 	
-if(sharedBeat.length > 0)
+if(sharedBeat.length > 0){
+	
 	$("#tracker").html(LZString.decompressFromBase64(sharedBeat));
+}
+
+var sharedBpm = getParameterByName('bpm');
+
+if(sharedBpm.length > 0 && sharedBpm >= minBpm && sharedBpm <= maxBpm) {
+	
+	bpm = sharedBpm;
+	$("#bpm").html(bpm+ " BPM");
+	
+}
+	
+var sharedSteps = getParameterByName('steps');
+
+if(sharedSteps.length > 0 && sharedSteps >= 2 && sharedSteps <= maxSteps) {
+	
+	steps = sharedSteps;
+	$("#steps").html("/ " + steps);;
+	
+}
 	
 $.fn.toggleDisabled = function() {
 	return this.each(function() {
@@ -70,8 +91,10 @@ $.fn.toggleDisabled = function() {
 	
 function showShare(){
 	
+	$("#shareBtn").addClass("collapse");
+	$("#waitingBox").removeClass("collapse");
 	var compressTrack = LZString.compressToBase64($("#tracker").val());
-	var trackUrl = "https://eypacha.github.io/bbx-tracker?beat=" + compressTrack;
+	trackUrl = "https://eypacha.github.io/bbx-tracker/?beat=" + compressTrack + "&bpm=" + bpm + "&steps=" + steps;
 	
     if ($("#shortlink").val() == ""){
 		
@@ -79,11 +102,11 @@ function showShare(){
 
 		if (typeof short_url === 'undefined') {short_url = trackUrl;}
 			$("#fbShare").attr("href","https://www.facebook.com/sharer/sharer.php?u="+short_url);
-			$("#twShare").attr("href","https://twitter.com/share?url="+short_url+"&text=Escucha%20el%20beat%20que%acabo%20de20hacer!&hashtags=bbxtracker,beatbox,bbx");
-			$("#btEmail").attr("href","mailto:?subject=Escucha%20el%20beat%20que%acabo%20de20hacer!&body=Beat%%20hecho%20con%20BBX%20Tracker! > "+short_url);
+			$("#twShare").attr("href","https://twitter.com/share?url="+short_url+"&text=Escucha%20el%20beat%20que%20acabo%20de%20hacer!&hashtags=bbxtracker,beatbox,bbx&via=eypacha");
+			$("#btEmail").attr("href","mailto:?subject=Escucha el beat que acabo de hacer!&body=Beat hecho con BBX Tracker! > "+short_url);
 			$("#shortlink").val(short_url);
-			$("#shareBtn").addClass("collapse");
 			$("#shareIt").removeClass("collapse");
+			$("#waitingBox").addClass("collapse");
 		});
 
     }
@@ -91,15 +114,15 @@ function showShare(){
 	
 function get_short_url(long_url, func){
     $.getJSON(
-        "https://api.bitly.com/v3/shorten?callback=?", 
+        "https://api-ssl.bitly.com/v3/shorten?", 
         { 
-            "format": "json",
-            "apiKey": "R_da6cb00ea3395240c2a5ee7b5b6b1384",
-            "login": "eypacha",
-            "longUrl": long_url
+			"access_token": "4da3dd9ee59dfe487358e3d656aa6e2bcc1000eb",
+            "longUrl": long_url,
+			"format": "json"
         },
         function(response)
         {
+			console.log(response);
             func(response.data.url);
             
         }
@@ -133,12 +156,15 @@ function playTracker(){
 	$("#shortlink").val("");
 	$("#shareBtn").removeClass("collapse");
 	$("#shareIt").addClass("collapse");
+	$("#waitingBox").addClass("collapse");
 	
 	
 }
 	
 function sonar(){
+	
 	sound.play(tracker[step]);
+	
 	$("#pacha div").css("background-image","url('img/pacha-boca-"+tracker[step]+".png')");
 	step++;
 	if(step >= tracker.length){

@@ -11,8 +11,14 @@ a {
 a:hover{
 	color:grey
 }
-h3 {
+h3{
 	font-family: monospace;
+	-webkit-margin-after: 0px;
+}
+.subtitle {
+	font-family: monospace;
+	font-size: 12pt;
+	margin-bottom: 10px;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

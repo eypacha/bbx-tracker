@@ -79,8 +79,8 @@ function showShare(){
 
 		if (typeof short_url === 'undefined') {short_url = trackUrl;}
 			$("#fbShare").attr("href","https://www.facebook.com/sharer/sharer.php?u="+short_url);
-			$("#twShare").attr("href","http://twitter.com/share?url="+short_url+"&text=Listen%20to%20this%20beat%20I%20just%20made!&hashtags=bbxtracker,beatbox,bbx");
-			$("#btEmail").attr("href","mailto:?subject=Listen%20to%20this%20beat%20I%20just%20made!&body=Beat%20track%20made%20it%20with%20BBX%20Tracker! > "+short_url);
+			$("#twShare").attr("href","https://twitter.com/share?url="+short_url+"&text=Escucha%20el%20beat%20que%acabo%20de20hacer!&hashtags=bbxtracker,beatbox,bbx");
+			$("#btEmail").attr("href","mailto:?subject=Escucha%20el%20beat%20que%acabo%20de20hacer!&body=Beat%%20hecho%20con%20BBX%20Tracker! > "+short_url);
 			$("#shortlink").val(short_url);
 			$("#shareBtn").addClass("collapse");
 			$("#shareIt").removeClass("collapse");
@@ -91,7 +91,7 @@ function showShare(){
 	
 function get_short_url(long_url, func){
     $.getJSON(
-        "http://api.bitly.com/v3/shorten?callback=?", 
+        "https://api.bitly.com/v3/shorten?callback=?", 
         { 
             "format": "json",
             "apiKey": "R_da6cb00ea3395240c2a5ee7b5b6b1384",

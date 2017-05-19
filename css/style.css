@@ -29,6 +29,7 @@ h3 {
    text-shadow: none;
    outline: solid 1px grey;
 }
+
 ::selection {
    background: #ccc;
    color: #fff;

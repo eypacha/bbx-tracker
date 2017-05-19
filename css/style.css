@@ -37,16 +37,31 @@ h3 {
    outline: solid 1px grey;
 }
 
-#tracker, #sound-codes{
-	width: 440px;
-	border: solid silver 1px;
-	height: 140px;
+#tracker, #sound-codes, .container{
 	font-size: 11pt;
-	text-align: center;
-	padding: 5px;
 	resize: none;
 	font-family: monospace;
+	padding: 5px;
+}
+#tracker{
+	width: 440px;
+	height: 80px;
+	text-align: center;
+	border: solid silver 1px;
 	margin-top: 5px;
+}
+#sound-codes{
+	width: 359px;
+	height: 140px;
+	padding-left: 90px;
+	padding-right: 0px;
+	border: solid silver 1px;
+}
+.container{
+	width: 450px;
+	height: 140px;
+	padding: 0px;
+	display: inline-block;
 }
 #playbar {
 	padding: 5px;
@@ -74,6 +89,24 @@ h3 {
 	color: black;
 	cursor: pointer;
 }
+#shareIt {
+	margin-top: 5px;
+	margin-bottom: 5px; 
+}
+#shareBtn{
+	font-size:12pt;
+	color: black;
+	cursor: pointer;
+	padding: 10gpx;
+	background: white;
+	border-top: solid 2px grey;
+	border-left: solid 2px grey;
+	border-bottom: solid 2px black;
+	border-right: solid 2px black;
+	border-radius: 24px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 #playbar .tempo {
 	display: inline-grid;
     height: 50px !important;
@@ -95,6 +128,27 @@ h3 {
 	border-right: 0;
 	border-bottom: solid black 1.5pt;
 	cursor: default;
+}
+#pacha {
+	width: 140px;
+	height: 140px;
+	background-color: #002b8a;
+	background-image: url(../img/pacha.gif);
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	top: -150px;
+	left: 5px;
+	border-radius: 5px;
+}
+#pacha div{
+	width: 140px;
+	height: 140px;
+	background-image: url(../img/pacha-boca---.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+	border-radius: 5px;
 }
 #steps {
 	display: inline-block;

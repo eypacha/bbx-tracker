@@ -10,6 +10,7 @@ var maxBpm = 300;
 var maxSteps = 8;
 var images = new Array();
 var trackUrl;
+var demoBeat = "B- -- ió -- Pf -- ió -- BB -- ts -- Pf cl ts c2 B- -- ió -- Pf -- ió -- BB -- ts ^m Pf cl ts c2 B- -- ió -- Pf -- soy -- Pa -- Cha -- Pf cl ts k-  vi -- buen -- pfar ke cha ca bu -- co -- Pf ^m ts c2";
 
 function preload() {
 	for (i = 0; i < preload.arguments.length; i++) {
@@ -17,7 +18,7 @@ function preload() {
 		images[i].src = "img/pacha-boca-" + preload.arguments[i] + ".png";
 	}
 }
-preload("B-","Pf","ts","c1","c2","c3","^K","^m","BB");
+preload("B-","Pf","ts","c1","c2","c3","^K","^m","BB","Pa","ió","soy","Pa","Cha","vi","buen","pfar","ke","cha","ca","bu","co");
 
 $(document).ready(function() {
 	
@@ -31,7 +32,16 @@ $("#tempoDownDown").on('click', function(){changeTempo(-10)});
 $("#moreSteps").on('click', function(){changeSteps(+1)});
 $("#lessSteps").on('click', function(){changeSteps(-1)});
 $("#shareBtn").on('click', showShare);
-$("#shortlink").on( "click", function(){$("#shortlink").select();} );
+$("#shortBtn").on('click', showShare);
+$("#demoLink").on( "click", function(){
+	$("#tracker").html(demoBeat);
+	$("#loopBtn").addClass('noloop');
+	bpm = 80;
+	$("#bpm").html(bpm+ " BPM");
+	steps = 2;
+	$("#steps").html("/ "+steps);
+	
+} );
 	
  sound = new Howl({
   src: ['audio/sounds.mp3'],
@@ -45,7 +55,19 @@ $("#shortlink").on( "click", function(){$("#shortlink").select();} );
     'c3': [3373, 300],
     '^K': [2135, 250],
     '^m': [3869, 250],
-    'BB': [5201, 350]
+    'BB': [5201, 350],
+    'ió': [6055, 350],
+    'soy': [6513, 350],
+    'Pa': [6930, 330],
+    'Cha': [7287, 360],
+    'vi': [7697, 350],
+    'buen': [8052, 220],
+    'pfar': [8316, 288],
+    'ke': [8651, 101],
+    'cha': [8805, 140],
+    'ca': [9024, 189],
+    'bu': [9221, 318],
+    'co': [9591, 277]
   }
 });
 	
@@ -67,7 +89,7 @@ var sharedBpm = getParameterByName('bpm');
 
 if(sharedBpm.length > 0 && sharedBpm >= minBpm && sharedBpm <= maxBpm) {
 	
-	bpm = sharedBpm;
+	bpm = parseInt(sharedBpm);
 	$("#bpm").html(bpm+ " BPM");
 	
 }
@@ -76,7 +98,7 @@ var sharedSteps = getParameterByName('steps');
 
 if(sharedSteps.length > 0 && sharedSteps >= 2 && sharedSteps <= maxSteps) {
 	
-	steps = sharedSteps;
+	steps = parseInt(sharedSteps);
 	$("#steps").html("/ " + steps);;
 	
 }

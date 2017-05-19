@@ -36,9 +36,9 @@ $("#shortBtn").on('click', showShare);
 $("#demoLink").on( "click", function(){
 	$("#tracker").html(demoBeat);
 	$("#loopBtn").addClass('noloop');
-	bpm = 80;
+	bpm = 95;
 	$("#bpm").html(bpm+ " BPM");
-	steps = 2;
+	steps = 4;
 	$("#steps").html("/ "+steps);
 	
 } );
@@ -170,7 +170,7 @@ function playTracker(){
 	
 	$("#playBtn").addClass("collapse");
 	$("#stopBtn").removeClass("collapse");
-	patron = setInterval(function(){sonar()},3600/bpm*8/steps);
+	patron = setInterval(function(){sonar()},3600/bpm*16/steps);
 	
 	$(".tempo button").toggleDisabled();
 	$("#tracker").toggleDisabled();

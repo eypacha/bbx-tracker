@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple BeatBox Tracker">
+    <meta name="author" content="Ey Pacha!">
+
+    <title>BBX Tracker v0.1</title>
+	
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link href="img/logo16.png" type="image/png" rel="icon" sizes="16x16"/>
+	<link href="img/logo32.png" type="image/png" rel="icon" sizes="32x32"/>
+	<link href="img/logo48.png" type="image/png" rel="icon" sizes="48x48"/>
+	
+</head>
+
+
+<body>
+	<h3><i class="fa fa-bullhorn"></i> BBX TRACKER 0.1 by <a href="http://eypacha.com" target="_blank"> Ey Pacha!</a><a href="http://eypacha.com/bbx-tracker" target="_blank"><i class="fa fa-github fa-fw" aria-hidden="true" title="Github"></i>In GitHub</a></h3>
+<div id="playbar" class="noselect">
+	<button id="playBtn">
+		<i class="fa fa-play fa-fw fa-lg" aria-hidden="true" title="Play"></i>
+	</button>
+	<button id="stopBtn" class="collapse">
+		<i class="fa fa-stop fa-fw fa-lg" aria-hidden="true" title="Stop"></i>
+		</button>
+	<button id="loopBtn">
+		<i class="fa fa-refresh fa-fw fa-lg" aria-hidden="true" title="Loop"></i>
+	</button>
+	<div class="tempo">
+		<button id="tempoUp">
+			<i class="fa fa-angle-up fa-fw fa-lg" aria-hidden="true" title="BMP+"></i>
+		</button>
+		<button id="tempoDown">
+			<i class="fa fa-angle-down fa-fw fa-lg" aria-hidden="true" title="BMP-"></i>
+		</button>
+	</div>
+	<div id="bpm">80 BPM</div>
+	<div class="tempo after">
+		<button id="tempoUpUp">
+			<i class="fa fa-angle-double-up fa-fw fa-lg" aria-hidden="true" title="BMP++"></i>
+		</button>
+		<button id="tempoDownDown">
+			<i class="fa fa-angle-double-down fa-fw fa-lg" aria-hidden="true" title="BMP--"></i>
+		</button>
+	</div>
+	<div id="steps">/ 2</div>
+	<div class="tempo steps">
+		<button id="moreSteps">
+			<i class="fa fa-angle-up fa-fw" aria-hidden="true" title="Steps+"></i>
+		</button>
+		<button id="lessSteps">
+			<i class="fa fa-angle-down fa-fw" aria-hidden="true" title="Steps-"></i>
+		</button>
+	</div>
+</div>
+
+<div>
+	<textarea id="tracker" type="text">BB -- -- -- Pf -- -- -- BB -- -- Pf -- -- B- B-
+BB -- -- -- Pf -- -- B- BB -- -- Pf -- -- B- B-
+BB -- ts -- Pf -- ts -- BB -- ts Pf -- ts B- B-
+BB -- ts -- Pf -- ts B- BB -- ts Pf -- ts B- B-
+BB c1 ts c2 Pf -- ts -- BB -- ts Pf -- -- B- B-
+BB c1 ts c2 Pf -- ts B- BB -- ts Pf -- ts B- B-
+BB c1 ts c2 Pf ^m ts -- BB -- ts Pf -- ts B- B-
+BB c1 ts c2 Pf ^m ts B- BB ^K ts -- ^K ts c3 ^K</textarea>
+</div>
+<textarea id="tracker" type="text" disabled>
+SOUND CODES
+B- = Kick
+BB = Long Kick
+Pf = Snare
+^K = Inward snare
+c1, c2, c3 = Tonge clicks
+^m = Lip scratch</textarea>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/howler.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

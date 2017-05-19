@@ -1,2 +1,2 @@
 # bbx-tracker
-Simple Beatbox tracker
+Simple BeatBox Tracker hecho en JavasScript

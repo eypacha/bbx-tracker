@@ -1,0 +1,183 @@
+body,input,button{
+	font-family: Verdana;
+	text-align: center;
+}
+*:focus {
+    outline: none;
+}
+a {
+	color:black
+}
+a:hover{
+	color:grey
+}
+h3 {
+	font-family: monospace;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+::-moz-selection {
+   background: #ccc;
+   color: #fff;
+   text-shadow: none;
+   outline: solid 1px grey;
+}
+::selection {
+   background: #ccc;
+   color: #fff;
+   text-shadow: none;
+   outline: solid 1px grey;
+}
+
+#tracker{
+	width: 440px;
+	border: solid silver 1px;
+	height: 140px;
+	font-size: 11pt;
+	padding: 5px;
+	resize: none;
+	font-family: monospace;
+	margin-top: 5px;
+}
+#playbar {
+	padding: 5px;
+	display: inline-block;
+	border: solid 1px silver;
+	height: 51px;
+	width: 440px;
+}
+#hintchart {
+	padding: 5px;
+	border: solid 1px silver;
+	height: 200px;
+	width: 440px;
+}
+#playbar button {
+	width:48px;
+	height:48px;
+	background: white;
+	border-radius: 50%;
+	border-top: solid 2px grey;
+	border-left: solid 2px grey;
+	border-bottom: solid 2px black;
+	border-right: solid 2px black;
+	font-size: 13pt;
+	color: black;
+	cursor: pointer;
+}
+#playbar .tempo {
+	display: inline-grid;
+    height: 50px !important;
+    position: relative;
+    top: -12px;
+    margin-bottom: 0px;
+}
+#bpm {
+	display: inline-block;
+	height: 44px;
+	width: 95px;
+	text-align: center;
+	line-height: 44px;
+	position: relative;
+	top: 1px;
+	margin-left: -8px;
+	border-top: solid grey 1.5pt;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: solid black 1.5pt;
+	cursor: default;
+}
+#steps {
+	display: inline-block;
+	height: 43px;
+	width: 28px;
+	padding-left: 16px;
+	text-align: left;
+	line-height: 44px;
+	position: relative;
+	top: 0px;
+	margin-left: -15px;
+	border-left: 0;
+	border-top: solid grey 1pt;
+	border-bottom: solid black 1pt;
+	cursor: default;
+	font-size: 10pt;
+}
+#playbar .steps #moreSteps {
+	width: 28px;
+	border: solid 1px grey;
+	border-right: solid 1px black;
+	border-left: 0;
+	border-bottom: 0;
+	position: relative;
+	margin-left: -7px;
+	height: 23px;
+	border-radius: 0 14px 0 0;
+}
+#playbar .steps #lessSteps {
+	width: 28px;
+	height: 23px;
+	border: solid 1px black;
+	border-left: 0;
+	border-top: 0;
+	border-radius: 0 0 14px 0;
+	position: relative;
+	margin-left: -7px;
+	margin-top: -4px;
+}
+#playbar .steps button {
+	font-size: 6pt;
+	height: 24px;
+	display: inline;
+}
+
+#playbar .tempo button {
+	font-size: 10pt;
+	height: 24px;
+	display: inline;
+}
+#playbar .tempo button[disabled]{
+	color: silver;
+	cursor: default;
+}
+#playbar .tempo #tempoUp {
+	border-bottom: solid 1px silver;
+	border-radius: 14px 0 0 0;
+	border-right: solid 1px silver;
+}
+#playbar .tempo #tempoDown {
+	position:relative;
+	margin-top: -2px;
+	border-top: 0;
+	border-radius: 0 0 0 14px;
+	border-right: solid 1px silver;
+}
+#playbar .tempo.after{
+    margin-left: -6px;
+}
+#playbar .tempo #tempoUpUp {
+	border-bottom: solid 1px silver;
+	border-radius: 0 14px 0 0;
+	border-left: solid 1px silver;
+}
+#playbar .tempo #tempoDownDown {
+	position:relative;
+	margin-top: -2px;
+	border-top: 0;
+	border-radius: 0 0 14px 0;
+	border-left: solid 1px silver;
+}
+.noloop{
+	color: silver !important;
+}
+.collapse {
+	display:none;
+}
+

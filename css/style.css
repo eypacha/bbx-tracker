@@ -36,11 +36,12 @@ h3 {
    outline: solid 1px grey;
 }
 
-#tracker{
+#tracker, #sound-codes{
 	width: 440px;
 	border: solid silver 1px;
 	height: 140px;
 	font-size: 11pt;
+	text-align: center;
 	padding: 5px;
 	resize: none;
 	font-family: monospace;

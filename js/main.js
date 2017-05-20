@@ -15,10 +15,10 @@ var demoBeat = "B- -- ió -- Pf -- ió -- BB -- ts -- Pf cl ts c2 B- -- ió -- P
 function preload() {
 	for (i = 0; i < preload.arguments.length; i++) {
 		images[i] = new Image()
-		images[i].src = "img/pacha-boca-" + preload.arguments[i] + ".png";
+		images[i].src = "img/pacha-" + preload.arguments[i] + ".png";
 	}
 }
-preload("B-","Pf","ts","c1","c2","c3","^K","^m","BB","Pa","ió","soy","Pa","Cha","vi","buen","pfar","ke","cha","ca","bu","co");
+preload("boca-B-","boca-Pf","boca-ts","boca-c1","boca-c2","boca-c3","boca-^K","boca-^m","boca-BB","boca-Pa","boca-ió","boca-soy","boca-Pa","boca-Cha","boca-vi","boca-buen","boca-pfar","boca-ke","boca-cha","boca-ca","boca-bu","boca-co","ojos-1","ojos-2");
 
 $(document).ready(function() {
 	
@@ -185,9 +185,25 @@ function playTracker(){
 	
 function sonar(){
 	
+	var ojos = 0;
+	switch(step % 4) {
+    case 1:
+        ojos = 1;
+		break;
+	case 3:
+        ojos = 2;
+		break;
+	case 2:
+	case 0:
+	default:
+        ojos = 0;
+	break;
+	}
+	
+	$("#pacha").css("background-image","url('img/pacha-ojos-"+ojos+".png')");
+	$("#pacha div").css("background-image","url('img/pacha-boca-"+tracker[step]+".png')");
 	sound.play(tracker[step]);
 	
-	$("#pacha div").css("background-image","url('img/pacha-boca-"+tracker[step]+".png')");
 	step++;
 	if(step >= tracker.length){
 		if(!loop){
@@ -201,11 +217,14 @@ function sonar(){
 function stopTracker(){
 	clearInterval(patron);
 	step = 0;
+	ojos = 0;
 	$("#pacha div").css("background-image","url('img/pacha-boca---.png')");
+	$("#pacha").css("background-image","url('img/pacha-ojos-"+ojos+".png')");
 	$("#playBtn").removeClass("collapse");
 	$("#stopBtn").addClass("collapse");
 	$(".tempo button").toggleDisabled();
 	$("#tracker").toggleDisabled();
+	
 }
 	
 function toggleLoop(){

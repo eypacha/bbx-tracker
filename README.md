@@ -4,9 +4,9 @@ Simple Beatbox Tracker hecho en JavasScript y con varios plugins.
 [DEMO](https://eypacha.github.io/bbx-tracker/)
 
 ## Descripción
-1. Los beats se componen mediante un recuadro de texto utilizando una codifición para los sonidos.
+1. Los beats se componen mediante un recuadro de texto utilizando una [codifición de 2 carácteres para los sonidos](#lista-de-sonidos).
 2. Los sonidos se reproducen mediante la librería de audio [Howler.js](https://howlerjs.com)
-3. Un [EyPacha!](http://eypacha.com) pixelar mueve la boca para darle visual.
+3. Un [EyPacha!](http://eypacha.com) pixelar mueve la boca tratando de imitar la fonética y los ojos a modo de metrónomo.
 4. Se puede compartir el beat por medio de una variable en la URL.
 5. La misma se encuentra codificada en UTF64 mediante [LZString](https://github.com/pieroxy/lz-string/)
 6. La url generada se acorta mediante el servicio de [Bitly API](http://dev.bitly.com/)

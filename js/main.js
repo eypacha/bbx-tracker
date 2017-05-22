@@ -10,7 +10,6 @@ var maxBpm = 300;
 var maxSteps = 8;
 var images = new Array();
 var trackUrl;
-var demoBeat = "B- -- ió -- Pf -- ió -- BB -- ts -- Pf cl ts c2 B- -- ió -- Pf -- ió -- BB -- ts ^m Pf cl ts c2 B- -- ió -- Pf -- soy -- Pa -- Cha -- Pf cl ts k-  vi -- buen -- pfar ke cha ca bu -- co -- Pf ^m ts c2";
 
 function preload() {
 	for (i = 0; i < preload.arguments.length; i++) {
@@ -33,15 +32,6 @@ $("#moreSteps").on('click', function(){changeSteps(+1)});
 $("#lessSteps").on('click', function(){changeSteps(-1)});
 $("#shareBtn").on('click', showShare);
 $("#shortBtn").on('click', showShare);
-$("#demoLink").on( "click", function(){
-	$("#tracker").html(demoBeat);
-	$("#loopBtn").addClass('noloop');
-	bpm = 95;
-	$("#bpm").html(bpm+ " BPM");
-	steps = 4;
-	$("#steps").html("/ "+steps);
-	
-} );
 	
  sound = new Howl({
   src: ['audio/sounds.mp3'],

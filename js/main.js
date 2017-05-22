@@ -17,7 +17,7 @@ function preload() {
 		images[i].src = "img/pacha-" + preload.arguments[i] + ".png";
 	}
 }
-preload("boca-B-","boca-Pf","boca-ts","boca-c1","boca-c2","boca-c3","boca-^K","boca-^m","boca-BB","boca-Pa","boca-ió","boca-soy","boca-Pa","boca-Cha","boca-vi","boca-buen","boca-pfar","boca-ke","boca-cha","boca-ca","boca-bu","boca-co","ojos-1","ojos-2");
+preload("boca-b","boca-pf","boca-ts","boca-c","boca-k","boca-m","boca-b","boca-o","boca-u","boca---","ojos-1","ojos-2");
 
 $(document).ready(function() {
 	
@@ -31,14 +31,13 @@ $("#tempoDownDown").on('click', function(){changeTempo(-10)});
 $("#moreSteps").on('click', function(){changeSteps(+1)});
 $("#lessSteps").on('click', function(){changeSteps(-1)});
 $("#shareBtn").on('click', showShare);
-$("#shortBtn").on('click', showShare);
 	
  sound = new Howl({
   src: ['audio/sounds.mp3'],
   rate: 1,
   sprite: {
     'B-': [060, 300],
-    Pf: [430, 300],
+    'Pf': [430, 300],
     'ts': [1084, 300],
     'c1': [2429, 210],
     'c2': [2666, 300],
@@ -191,8 +190,128 @@ function sonar(){
 	}
 	
 	$("#pacha").css("background-image","url('img/pacha-ojos-"+ojos+".png')");
-	$("#pacha div").css("background-image","url('img/pacha-boca-"+tracker[step]+".png')");
-	sound.play(tracker[step]);
+	
+	var sonido = '',
+		boca = '';
+	
+	switch(tracker[step].toLowerCase()){
+	case 'b':		
+	case 'b-':		
+	case 'p':		
+	case 'p-':
+			sonido = 'B-';
+			boca = 'b';
+			break;
+	case 'ts':
+	case 't':
+	case 't-':
+			sonido = 'ts';
+			boca = 'ts';
+			break;
+	case 'pf':
+			sonido = 'Pf';
+			boca = 'pf';
+			break;
+	case 'c1':
+			sonido = 'c1';
+			boca = 'c';
+			break;
+	case 'c2':
+	case 'c':
+	case 'c-':
+			sonido = 'c2';
+			boca = 'c';
+			break;
+	case 'c3':
+			sonido = 'c3';
+			boca = 'c';
+			break;
+	case '^k':
+	case 'k':
+	case 'k-':
+			sonido = '^K';
+			boca = 'k';
+			break;
+	case 'm-':
+	case '^m':
+	case 'mm':
+			sonido = '^m';
+			boca = 'm';
+			break;
+	case 'bb':
+			sonido = 'BB';
+			boca = 'bb';
+			break;
+	case 'ió':
+	case 'io':
+	case 'yo':
+			sonido = 'ió';
+			boca = 'o';
+			break;
+	case 'soy':
+	case 'soi':
+			sonido = 'soy';
+			boca = 'o';
+			break;
+	case 'pa':
+			sonido = 'Pa';
+			boca = 'b';
+			break;
+	case 'cha!':
+			sonido = 'Cha';
+			boca = 'k';
+			break;
+	case 'vi':
+	case 'bi':
+	case 'pi':
+			sonido = 'vi';
+			boca = 'k';
+			break;
+	case 'buen':
+			sonido = 'buen';
+			boca = 'b';
+			break;
+	case 'pfar':
+			sonido = 'pfar';
+			boca = 'f';
+			break;
+	case 'ke':
+	case 'que':
+			sonido = 'ke';
+			boca = 'k';
+			break;
+	case 'cha':
+			sonido = 'cha';
+			boca = 'b';
+			break;
+	case 'que':
+			sonido = 'cha';
+			boca = 'b';
+			break;
+	case 'ca':
+	case 'ka':
+			sonido = 'ca';
+			boca = 'b';
+			break;
+	case 'bu':
+	case 'pu':
+			sonido = 'bu';
+			boca = 'u';
+			break;
+	case 'co':
+	case 'ko':
+			sonido = 'co';
+			boca = 'o';
+			break;
+	default:
+			sonido = '--';
+			boca = '--';
+			break;
+	
+    }
+	
+	sound.play(sonido);
+	$("#pacha div").css("background-image","url('img/pacha-boca-"+boca+".png')");
 	
 	step++;
 	if(step >= tracker.length){

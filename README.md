@@ -21,8 +21,8 @@ Simple Beatbox Tracker hecho en JavasScript y con varios plugins.
 - `BB` Bombo largo
 - `t`,`ts` Hi-hat
 - `Pf` Redoblante
-- `^K` Redoblante aspirado
-- `^m` Scratch de labios
+- `^K`,`K` Redoblante aspirado
+- `^m`,`m`,`mm` Scratch de labios
 - `c`,`c1`,`c2`,`c3` Clicks de lenga
 - `ió`,`yo` Sílaba "Yo"
 - `soy` Sílaba "Soy"

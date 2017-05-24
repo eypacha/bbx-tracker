@@ -85,7 +85,7 @@ if(sharedBpm.length > 0 && sharedBpm >= minBpm && sharedBpm <= maxBpm) {
 	
 var sharedSteps = getParameterByName('steps');
 
-if(sharedSteps.length > 0 && sharedSteps >= 2 && sharedSteps <= maxSteps) {
+if(sharedSteps.length > 0 && sharedSteps >= 1 && sharedSteps <= maxSteps) {
 	
 	steps = parseInt(sharedSteps);
 	$("#steps").html("/ " + steps);;

@@ -54,7 +54,7 @@ $("#shareBtn").on('click', showShare);
     'pfar': [8316, 288],
     'ke': [8651, 101],
     'cha': [8805, 140],
-    'ca': [9024, 189],
+    'ca': [9024, 180],
     'bu': [9221, 318],
     'co': [9591, 277]
   }
@@ -232,6 +232,7 @@ function sonar(){
 			sonido = '^K';
 			boca = 'k';
 			break;
+	case 'm':
 	case 'm-':
 	case '^m':
 	case 'mm':

@@ -1,7 +1,7 @@
-# BBX Tracker!
-Simple Beatbox Tracker hecho en JavasScript y con varios plugins.
+# BBX Sekuencer!
+Simple Beatbox Sekuencer hecho en JavasScript y con varios plugins.
 
-[DEMO](https://eypacha.github.io/bbx-tracker/)
+[DEMO](https://eypacha.github.io/bbx-sekuenser/)
 
 ## Descripción
 1. Los beats se componen mediante un recuadro de texto utilizando una [codificación  para los sonidos](#lista-de-sonidos).
